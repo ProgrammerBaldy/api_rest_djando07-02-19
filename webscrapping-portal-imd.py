@@ -29,12 +29,6 @@ for cartaoDummy in cartoes_texto:
     listaTextoCartao.append(cartaoDummy.p.text)
     listaDataCartao.append(cartaoDummy.div.text.split('\n')[1].split('por')[0])
 
-lista_final = [[],[],[]]
-
-lista_final[0].extend(listaTituloCartao)
-lista_final[1].extend(listaTextoCartao)
-lista_final[2].extend(listaDataCartao)
-
 for i in range (0, len(listaTituloCartao)):
     cursor.execute("INSERT INTO valores_banco_newsmodel(title, text, date) VALUES (%s, %s, %s)", 
                    (listaTituloCartao[i], listaTextoCartao[i], listaDataCartao[i]))
